@@ -11,6 +11,21 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: false },
+      ],
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-extra-boolean-cast": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "prefer-const": "off",
+      "react-refresh/only-export-components": "off",
+      //'no-debugger': 'off',
+      //'@typescript-eslint/no-non-null-asserted-optional-chain': 'error', // Disallow non-null assertions on optional chaining
+    },
+  },
 ];
 
 export default eslintConfig;
